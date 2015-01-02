@@ -13,6 +13,7 @@ end
     
 # Handle POST-request (Receive and save the uploaded file)
 post "/upload" do 
+  puts "UPLOAD"
   File.open('uploads/' + params['myfile'][:filename], "w") do |f|
     f.write(params['myfile'][:tempfile].read)
   end
